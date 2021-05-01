@@ -8,6 +8,14 @@ module.exports = ({ mode, presets } = { mode: "production", presets: [] }) => {
   return merge(
     {
       mode,
+      module: {
+        rules: [
+          {
+            test: /\.jpe?g/,
+            use: "url-loader"
+          }
+        ]
+      },
       output: {
         filename: "bundle.js"
       },
